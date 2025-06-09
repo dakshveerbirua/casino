@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>5x5 Gem Finder Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container" role="main" aria-labelledby="title">
+    <h1 id="title">5x5 Gem Finder Game 💎</h1>
+    <p class="description">
+      Find all the gems without hitting a bomb 💣. Click tiles to reveal them.
+    </p>
+    <form id="bombForm" aria-label="Choose number of bombs to play">
+      <label for="bombCountInput" class="sr-only">Number of Bombs (1–24)</label>
+      <input
+        type="number"
+        id="bombCountInput"
+        name="bombCount"
+        min="1"
+        max="24"
+        value="5"
+        required
+        aria-describedby="bombCountDesc"
+      />
+      <span id="bombCountDesc" class="sr-only">
+        Enter a number of bombs between 1 and 24 to start the game
+      </span>
+      <button type="submit" class="start-btn" id="startBtn">Start Game</button>
+    </form>
+
+    <section aria-live="polite" id="message" class="message" role="alert"></section>
+
+    <div
+      class="grid"
+      id="gameGrid"
+      role="grid"
+      aria-label="Gem Finder grid"
+      aria-readonly="true"
+      hidden
+    ></div>
+
+    <button id="restartBtn" class="restart-btn" hidden aria-label="Restart the game">
+      Restart Game
+    </button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
